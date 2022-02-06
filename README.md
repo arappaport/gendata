@@ -1,8 +1,30 @@
 # gendata
-Generates random datasets from json definition
+Generates random datasets from json definition file: columns template. 
 
+Example columns template json file: 
 
-No correlation between any columns
+For each column, the file lists the probability of the value occurring in our generated dataset.   So far, values can be strs, ints or floats. 
+* Column named 'Col0' has a 0.7 (70%) change of have a value of "Value2_C". 
+* A probability of "DEFAULT" - just means whatever is left over.  In Col2, DEFAULT means there is an 0.8 (1.0 - 0.2) 80% chance of a value of '"Value_80perc_DEFAULT"'
+
+```
+{  
+  "Col0": {
+    "Value2_A": 0.1,
+    "Value2_B": 0.2,
+    "Value2_C": 0.7
+  },
+  "Col1": {
+    "ValueA": 0.99,
+    "ValueB": 0.1
+  },
+  "Col2": {
+    "Value_20perc": 0.2,
+    "Value_80perc_DEFAULT": "DEFAULT"
+  }
+}
+```
+
 
 
 # Usage
@@ -17,6 +39,8 @@ There are two commands supported:
 
   Generate a CSV with random values passed on the probabilities of values from
   the column_template file
+  
+  No correlation between any columns
 
 Options:
   -n, --num TEXT     (optional) Number of rows to generate. Default=100.
