@@ -1,0 +1,15 @@
+{  
+  "Col0": {
+    "Value2_A": 0.1,
+    "Value2_B": 0.2,
+    "Value2_C": 0.7
+  },
+  "Col1": {
+    "ValueA": 0.99,
+    "ValueB": 0.1
+  },
+  "Col2": {
+    "Value_20perc": 0.2,
+    "Value_80perc_DEFAULT": "DEFAULT"
+  }
+}
